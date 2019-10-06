@@ -1,0 +1,66 @@
+{% include 'tasks/header.html' %}
+<canvas hidden id="canvas"></canvas>
+{% if tasks == None %}
+    <div>No Tasks yet!</div>
+
+{% else %}
+    
+    <div class="row margin-top-20">
+        <div class="col-md-5 col-md-offset-5"><h3 class="main-heading">Your Tasks</h3></div>
+        <div class="col-md-2">
+            <button class="btn btn-primary addTask">
+                <a class="remove-decorate font-white" href="{% url 'tasks:addTask' %}">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </button> 
+        </div>
+    </div>
+    <!--<div class="row margin-bottom-20 margin-top-20 headings">
+        <div class="col-md-3"><strong><h4></h4></strong></div>
+        <div class="col-md-2"><strong><h4>Task Name</h4></strong></div>
+        <div class="col-md-2"><strong><h4>Is it done ?</h4></strong></div>
+        <div class="col-md-2"><strong><h4>Created at</h4></strong></div>
+    </div>-->
+
+    <div class="tasks">
+        {% for task in tasks %} 
+            <div class="row margin-bottom-10">
+                <div class="col-md-3">
+                    <div class='middle-align'>
+                        <a href='{% url "tasks:markCompleted" id=task.id %}'><button class='btn btn-check isDoneBtn'><i class='fa fa-check'></i></button></a>
+                    </div>
+                </div>
+
+                <input type="hidden" id="taskid" name="taskid" value="{{task.id}}">
+                <div class="col-md-2 middle-align">
+                    <span class="font-strong">{{task.taskName}}</span>
+                </div>
+                <div class="col-md-2 middle-align">
+                    {% if task.isDone == 1 %} 
+                        <span class="completed">Completed</span>
+                    {% else %} 
+                        <span class="pending">Pending</span>
+                    {% endif %}
+                </div>
+                <div class="col-md-2 middle-align">
+                    created on: 
+                    {{task.createdTime}}
+                </div>
+                <div class="col-md-1">
+                    <a href="{% url 'tasks:getEditTask' id=task.id %}">
+                        <button class="btn btn-sm btn-primary edit editBtn font-white remove-decorate"><i class="fa fa-pencil"></i></button>
+                    </a>
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-sm btn-danger delete deleteBtn">
+                        <a href="{% url 'tasks:deleteTask' id=task.id %}" class="remove-decorate font-white"><i class="fa fa-trash"></i></a>
+                    </button>
+                </div>
+            </div>
+            
+        {% endfor %} 
+    </div>
+        
+{% endif %}
+
+{% include 'tasks/footer.html' %}

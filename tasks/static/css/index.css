@@ -1,0 +1,92 @@
+.custom-container {
+    margin-top: 20px;
+}
+.completed {
+    color: green;
+}
+.pending {
+    color: red;
+}
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+.margin-top-20 {
+    margin-top: 20px;
+}
+.margin-bottom-10 {
+    margin-bottom: 10px;
+} 
+.div-contain {
+    margin-top: 10%;
+    margin-left: 24%;
+    padding: 58px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: #008b8bc7;
+    width: 50%;
+}
+.trans-btn {
+    background: transparent;
+    border: 2px solid #00000026 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    width: 184px;
+    margin-left: 30%;
+}
+.remove-decorate {
+    text-decoration: none !important;
+}
+.font-white {
+    color: white;
+}
+.font-white:hover {
+    color: white !important;
+}
+.middle-align, h4 {
+    text-align: center;
+}
+.main-heading {
+    font-size: 26px;
+    color: black;
+    opacity: 0.6;
+    margin-top: 20px;
+    margin-bottom: 62px;
+}
+.font-strong {
+    font-weight: 600;
+    font-size: 16px;
+}
+.underline {
+    text-decoration: underline;
+}
+.addTask {
+    height: 60px;
+    width: 60px;
+    background-color: #bbb;
+    border-radius: 50% !important;
+    display: inline-block !important;
+    position: fixed;
+}
+.addTask i {
+    font-size: 22px;
+}
+.headings {
+    background: lightgray;
+    border-radius: 20px;
+}
+.tasks {
+    background: #d3d3d342;
+    padding: 24px;
+    border-radius: 42px;
+    margin-top: 40px;
+}
+.tasks .row {
+    margin-top: 17px;
+}
+.editBtn, .deleteBtn {
+    height: 40px;
+    width: 40px;
+    border-radius: 50% !important;
+    display: inline-block !important;
+    position: fixed;
+}

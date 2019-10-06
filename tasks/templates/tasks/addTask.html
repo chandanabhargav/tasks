@@ -1,0 +1,31 @@
+{% include 'tasks/header.html' %}
+<div class="row">
+    <div class="col-md-2 col-md-offset-10">
+        <a href="{% url 'tasks:index' %}" class="remove-decorate"><h4>Home</h4></a>
+    </div>
+</div>
+<div class="div-contain">
+    {% if task != None %}
+        <div class="row"><h4 class="font-white">Task created successfully!</h4></div>
+    {% endif %}
+    <h3>Create your task</h3>
+    <form action="{% url 'tasks:addTask' %}"> 
+        <div class="row margin-top-20">
+            <div class="col-md-12">
+                <input class="form-control" required id="taskName" name="taskName" placeholder="Task">
+            </div>
+        </div>
+        <div class="row margin-top-20">
+            <div class="col-md-12">
+                <input class="form-control" required name="completionDate" id="completionDate" placeholder="Completion date">
+            </div>
+        </div>
+        <input type="submit" class="btn trans-btn margin-top-20">
+    </form>
+    <script>
+        jQuery('#completionDate').datetimepicker({
+            format:'Y-m-d H:i:s',
+        });
+    </script>
+</div>
+{% include 'tasks/footer.html' %}
